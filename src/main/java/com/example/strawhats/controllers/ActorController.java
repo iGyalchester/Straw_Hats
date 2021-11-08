@@ -42,5 +42,4 @@ public class ActorController {
         return actorService.getActorById(id);
     }
 
-
 }
