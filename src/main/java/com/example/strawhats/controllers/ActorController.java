@@ -3,8 +3,8 @@ package com.example.strawhats.controllers;
 import com.example.strawhats.domain.Actor;
 import com.example.strawhats.services.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,6 +23,7 @@ public class ActorController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Actor createActor(@RequestBody Actor actor) {
         return actorService.createActor(actor);
     }
